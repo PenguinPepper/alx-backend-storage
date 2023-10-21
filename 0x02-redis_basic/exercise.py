@@ -10,6 +10,7 @@ class Cache:
     """Class named Cache wthat sets r to redis server"""
     def __init__(self):
         self._redis = redis.Redis()
+        self._redis.flushdb()
 
     def store(self, data: Any) -> str:
         """Method that takes a data argument and returns a string"""
